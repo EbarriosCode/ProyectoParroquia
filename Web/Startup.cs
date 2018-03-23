@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Models;
 
 namespace Web
 {
@@ -22,6 +24,10 @@ namespace Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            // Obteniendo cadena de conexion y registrando DbContext sql-server
+            var SqlConnection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<ParroquiaDbContext>(options => options.UseSqlServer(SqlConnection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
