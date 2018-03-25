@@ -11,9 +11,10 @@ using System;
 namespace Models.Migrations
 {
     [DbContext(typeof(ParroquiaDbContext))]
-    partial class ParroquiaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180324163605_Add_Model_Departamento_Municipio_Relation")]
+    partial class Add_Model_Departamento_Municipio_Relation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

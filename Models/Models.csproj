@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <Compile Remove="Migrations\20180324162554_Add_Model_Bautismo_Sacerdote_Departamento_Municipio.cs" />
   </ItemGroup>
 
   <ItemGroup>
