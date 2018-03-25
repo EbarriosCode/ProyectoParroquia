@@ -12,9 +12,15 @@ namespace Models
             : base(options)
         {}
 
-        //public DbSet<Bautismo> Bautismo { get; set; }
-        //public DbSet<Sacerdote> Sacerdote { get; set; }
         public DbSet<Departamento> Departamento { get; set; }
         public DbSet<Municipio> Municipio { get; set; }
+        public DbSet<Bautismo> Bautismo { get; set; }
+        public DbSet<Sacerdote> Sacerdote { get; set; }
+        public DbSet<PuestoSacerdote> PuestoSacerdote { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);            
+        //}
     }
 }

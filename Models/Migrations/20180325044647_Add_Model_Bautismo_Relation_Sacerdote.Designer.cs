@@ -11,9 +11,10 @@ using System;
 namespace Models.Migrations
 {
     [DbContext(typeof(ParroquiaDbContext))]
-    partial class ParroquiaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180325044647_Add_Model_Bautismo_Relation_Sacerdote")]
+    partial class Add_Model_Bautismo_Relation_Sacerdote
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,40 +93,16 @@ namespace Models.Migrations
                     b.ToTable("Municipio");
                 });
 
-            modelBuilder.Entity("Models.Domain.PuestoSacerdote", b =>
-                {
-                    b.Property<int>("PuestoSacerdoteId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("NombrePuesto");
-
-                    b.HasKey("PuestoSacerdoteId");
-
-                    b.ToTable("PuestoSacerdote");
-                });
-
             modelBuilder.Entity("Models.Domain.Sacerdote", b =>
                 {
                     b.Property<int>("SacerdoteId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("Activo");
-
                     b.Property<string>("Apellidos");
-
-                    b.Property<DateTime>("FechaLlegadaParroquia");
-
-                    b.Property<DateTime>("FechaNacimiento");
-
-                    b.Property<DateTime>("FechaRetiradaParroquia");
 
                     b.Property<string>("Nombres");
 
-                    b.Property<int>("PuestoSacerdoteId");
-
                     b.HasKey("SacerdoteId");
-
-                    b.HasIndex("PuestoSacerdoteId");
 
                     b.ToTable("Sacerdote");
                 });
@@ -152,14 +129,6 @@ namespace Models.Migrations
                     b.HasOne("Models.Domain.Departamento", "Departamento")
                         .WithMany("Municipio")
                         .HasForeignKey("DepartamentoId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Models.Domain.Sacerdote", b =>
-                {
-                    b.HasOne("Models.Domain.PuestoSacerdote", "PuestoSacerdote")
-                        .WithMany("Sacerdote")
-                        .HasForeignKey("PuestoSacerdoteId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

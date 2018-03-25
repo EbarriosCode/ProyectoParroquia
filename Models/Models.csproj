@@ -6,6 +6,17 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\20180324162554_Add_Model_Bautismo_Sacerdote_Departamento_Municipio.cs" />
+    <Compile Remove="Migrations\20180325023410_Add_Model_Bautismo_Sacerdote_Relation.cs" />
+    <Compile Remove="Migrations\20180325024333_Add_Model_Bautismo_Sacerdote_Relation.cs" />
+    <Compile Remove="Migrations\20180325035450_Add_Model_Bautismo_Sacerdote_Relation.cs" />
+    <Compile Remove="Migrations\20180325040545_Add_Model_Bautismo_Sacerdote_Relation.cs" />
+    <Compile Remove="Migrations\20180325040743_Add_Model_Bautismo_Sacerdote_Relation.cs" />
+    <Compile Remove="Migrations\20180325041109_Add_Model_Bautismo_Sacerdote_Relation.cs" />
+    <Compile Remove="Migrations\20180325041751_Add_Model_Bautismo_Sacerdote_Relation.cs" />
+    <Compile Remove="Migrations\20180325041847_Add_Model_Bautismo_Sacerdote_Relation.cs" />
+    <Compile Remove="Migrations\20180325042617_Add_Model_Bautismo_Relation_Sacerdote.cs" />
+    <Compile Remove="Migrations\20180325042802_Add_Model_Bautismo_Relation_Sacerdote.cs" />
+    <Compile Remove="Migrations\20180325043942_Add_Model_Bautismo_Relation_Sacerdote.cs" />
   </ItemGroup>
 
   <ItemGroup>

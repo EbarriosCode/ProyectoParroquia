@@ -24,8 +24,9 @@ namespace Models.Domain
         [Display(Name = "Departamento")]
         public int DepartamentoId { get; set; }
 
-        [Display(Name = "Municipio")]
-        public int MunicipioId { get; set; }
+        [Display(Name = "Municipio")]          
+        public int? MunicipioId { get; set; }
+
         public string Direccion { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaBautismo { get; set; }
@@ -34,7 +35,8 @@ namespace Models.Domain
 
         public string Observaciones { get; set; }
 
-        public virtual Departamento Departamento { get; set; }
-        public virtual Municipio Municipio { get; set; }
+        public Sacerdote Sacerdote { get; set; }
+        public Departamento Departamento { get; set; }
+        public Municipio Municipio { get; set; }
     }
 }

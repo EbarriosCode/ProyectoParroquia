@@ -16,8 +16,7 @@ namespace Models.Domain
         public string NombreMunicipio { get; set; }
         public int DepartamentoId { get; set; }
 
-        //public virtual IEnumerable<Bautismo> Bautismo { get; set; }
         public Departamento Departamento { get; set; }
-
+        public List<Bautismo> Bautismo { get; set; }
     }
 }

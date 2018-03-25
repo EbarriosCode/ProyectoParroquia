@@ -14,6 +14,47 @@ namespace Models
             //context.Database.EnsureCreated();
             context.Database.Migrate();
             
+            var puestoSacerdote = new PuestoSacerdote[]
+            {
+                new PuestoSacerdote{ NombrePuesto = "Párroco" },
+                new PuestoSacerdote{ NombrePuesto = "Vicario" }
+            };
+
+            //Agregando el listado de PuestoSacerdote
+            foreach(PuestoSacerdote ps in puestoSacerdote)
+            {
+                context.PuestoSacerdote.Add(ps);
+            }
+
+            // Creando Los Sacerdotes Iniciales
+            var sacerdotes = new Sacerdote[]
+            {
+                new Sacerdote
+                {
+                    Nombres = "Anacleto" ,
+                    Apellidos = "Gaytán Merlos",
+                    PuestoSacerdoteId = puestoSacerdote.Single(x => x.NombrePuesto == "Párroco").PuestoSacerdoteId,
+                    FechaNacimiento = DateTime.Now,
+                    FechaLlegadaParroquia = DateTime.Now,
+                    Activo = true
+                },
+
+                new Sacerdote
+                {
+                    Nombres = "David Pablo" ,
+                    Apellidos = "Elías",
+                    PuestoSacerdoteId = puestoSacerdote.Single(x => x.NombrePuesto == "Vicario").PuestoSacerdoteId,
+                    FechaNacimiento = DateTime.Now,
+                    FechaLlegadaParroquia = DateTime.Now,
+                    Activo = true
+                }
+            };
+            // Insertando los Sacerdotes al contexto
+            foreach(Sacerdote s in sacerdotes)
+            {
+                context.Sacerdote.Add(s);
+            }
+
             if (context.Departamento.Any())
             {
                 return;
