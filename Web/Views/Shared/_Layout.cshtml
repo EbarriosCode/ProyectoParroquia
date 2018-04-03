@@ -2,11 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8" />
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <title>@ViewData["Title"] - Parroquia </title>
 
-    <environment include="Development">
+
+    <environment include="Development,Production">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/material-dashboard.css?v=1.2.0" />
         <!--     Fonts and icons     -->
@@ -28,7 +30,11 @@
 </head>
 <body>
     <div class="wrapper">
+<<<<<<< HEAD
         <div class="sidebar" data-color="purple" data-image="images/sidebar-1.jpg">
+=======
+        <div class="sidebar" data-color="blue" data-image="../assets/img/sidebar-1.jpg">
+>>>>>>> 5dbd775e5758df6f9e01da451b1a95a5bafe54af
             <!--
             Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -167,7 +173,7 @@
         </div>
     </div>
 
-    <environment include="Development">
+    <environment include="Development,Production">
         <script src="~/lib/jquery/dist/jquery-3.2.1.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/material.min.js"></script>
