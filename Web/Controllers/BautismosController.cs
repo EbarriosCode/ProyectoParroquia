@@ -86,8 +86,8 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult AjaxMunicipio(string idDepartamento)
         {
-            var DepartamentoId = Int32.Parse(idDepartamento);
-            var listaMunicipios = (List<Municipio>)_createBautismoService.Municipios(DepartamentoId);
+            var departamentoId = Int32.Parse(idDepartamento);
+            var listaMunicipios = (List<Municipio>)_createBautismoService.Municipios(departamentoId);
             return new JsonResult(listaMunicipios);
         }
 
