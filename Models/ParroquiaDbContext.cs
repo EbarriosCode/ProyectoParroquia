@@ -8,6 +8,10 @@ namespace Models
 {
     public class ParroquiaDbContext : DbContext
     {
+        public ParroquiaDbContext()
+        {
+
+        }
         public ParroquiaDbContext(DbContextOptions<ParroquiaDbContext> options)
             : base(options)
         {}

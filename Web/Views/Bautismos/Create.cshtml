@@ -1,0 +1,221 @@
+﻿@model ViewModels.Domain.BautismoViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header" data-background-color="blue">
+                <h4 class="title">Crear Registro Bautismo</h4>
+                <p class="category">Complete los siguientes campos..</p>
+            </div>
+            <div class="card-content">
+                <form asp-action="Create" method="post">
+                    @Html.AntiForgeryToken()
+
+                    <div asp-validation-summary="ModelOnly"></div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Libro</label>
+                                <input type="text" class="form-control" asp-for="Libro">
+                                <span asp-validation-for="Libro" class="label label-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Folio</label>
+                                <input type="text" class="form-control" asp-for="Folio">
+                                <span asp-validation-for="Folio" class="label label-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Partida</label>
+                                <input type="text" class="form-control" asp-for="Partida">
+                                <span asp-validation-for="Partida" class="label label-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Nombres Bautizado</label>
+                                <input type="text" class="form-control" asp-for="NombresBautizado">
+                                <span asp-validation-for="NombresBautizado" class="label label-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Apellidos Bautizado</label>
+                                <input type="text" class="form-control" asp-for="ApellidosBautizado">
+                                <span asp-validation-for="ApellidosBautizado" class="label label-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Fecha de Nacimiento</label>
+                                <input type="date" class="form-control" asp-for="FechaNacimiento">
+                                <span asp-validation-for="FechaNacimiento" class="label label-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Padres Bautizado</label>
+                                <input type="text" class="form-control" asp-for="PadresBautizado">
+                                <span asp-validation-for="PadresBautizado" class="label label-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Fecha de Bautizo</label>
+                                <input type="date" class="form-control" asp-for="FechaBautismo">
+                                <span asp-validation-for="FechaBautismo" class="label label-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Realizado por (Sacerdote)</label>
+                                <select class="form-control" asp-for="SacerdoteId">
+                                    <option>Seleccione: </option>
+                                    @foreach (var sacerdote in Model.Sacerdotes)
+        {
+                            <option value="@sacerdote.SacerdoteId">@sacerdote.Nombres @sacerdote.Apellidos (@sacerdote.PuestoSacerdote.NombrePuesto)</option>
+}
+                                </select>
+                                <span asp-validation-for="SacerdoteId" class="label label-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Departamento</label>
+                                <select class="form-control" asp-for="DepartamentoId" id="Departamentos">
+                                    <option>Seleccione: </option>
+                                    @foreach (var departamento in Model.Departamentos)
+                    {
+                        <option value="@departamento.DepartamentoId">@departamento.NombreDepartamento</option>
+    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Municipio</label>
+                                <select class="form-control" name="MunicipioId" id="Municipios">
+                                    <option>Seleccione: </option>
+                                    @if (Model.Municipios != null)
+                    {
+                        @foreach (var municipio in Model.Municipios)
+        {
+                <option value="@municipio.MunicipioId">@municipio.NombreMunicipio</option>
+}
+    }
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Dirección</label>
+                                <input type="text" class="form-control" asp-for="Direccion">
+                                <span asp-validation-for="Direccion" class="label label-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Padrino</label>
+                                <input type="text" class="form-control" asp-for="Padrino">
+                                <span asp-validation-for="Padrino" class="label label-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Madrina</label>
+                                <input type="text" class="form-control" asp-for="Madrina">
+                                <span asp-validation-for="Madrina" class="label label-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"> Observaciones</label>
+                                    <textarea class="form-control" rows="5" name="Observaciones"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success pull-right">Guardar</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    @*  Usar para posible perfil
+        <div class="col-md-4">
+        <div class="card card-profile">
+            <div class="card-avatar">
+                <a href="#pablo">
+                    <img class="img" src="~/images/marc.jpg" />
+                </a>
+            </div>
+            <div class="content">
+                <h6 class="category text-gray">CEO / Co-Founder</h6>
+                <h4 class="card-title">Alec Thompson</h4>
+                <p class="card-content">
+                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                </p>
+                <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
+            </div>
+        </div>
+    </div>*@
+</div>
+
+<script>
+    $(document).ready(function () {
+        
+        var idDepartamento;
+        $("#Departamentos").change(function () {
+            idDepartamento = $("#Departamentos").val();
+            //alert(idDepartamento);
+            $("#Municipios").empty();
+            llenarMunicipios(idDepartamento);
+        });
+    });
+
+    function llenarMunicipios(idDepartamento){
+        $.ajax({
+            type: "POST",
+            url: "/Bautismos/AjaxMunicipio",
+            data: { idDepartamento },                                  
+            error: function (error) {
+                console.log(error);
+            }
+        }).done(function (data) {            
+            $.each(data, function (i,item) {
+                //console.log(item.nombreMunicipio);                
+                $("#Municipios").append($("<option>", {
+                    value: item.municipioId,
+                    text: item.nombreMunicipio
+                }));
+            });
+        });
+    }
+</script>

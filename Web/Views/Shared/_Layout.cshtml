@@ -14,26 +14,27 @@
         <!--     Fonts and icons     -->
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="~/css/site1.css" />
+        <script src="~/lib/jquery/dist/jquery-3.2.1.min.js"></script>
+        @*<link rel="stylesheet" href="~/css/site.css" />*@
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site1.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-color="blue" data-image="../assets/img/sidebar-1.jpg">
+        <div class="sidebar" data-color="blue">
             <!--
             Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
             Tip 2: you can also add an image using data-image tag
         -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Proyecto Parroquia
+                <a href="/" class="simple-text">
+                    Parroquia <br />San Antonio de Padua
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -51,7 +52,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/Home/About">
+                        <a href="/Bautismos/">
                             <i class="material-icons">content_paste</i>
                             <p>Bautismos</p>
                         </a>
@@ -89,6 +90,8 @@
                 </ul>
             </div>
         </div>
+
+
         <div class="main-panel">
             <nav class="navbar navbar-transparent navbar-absolute">
                 <div class="container-fluid">
@@ -171,8 +174,10 @@
         <script src="~/js/arrive.min.js"></script>
         <script src="~/js/perfect-scrollbar.jquery.min.js"></script>
         <script src="~/js/material-dashboard.js"></script>
-        
+
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     </environment>
             <environment exclude="Development">
                 <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"

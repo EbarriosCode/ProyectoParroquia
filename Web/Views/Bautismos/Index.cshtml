@@ -1,0 +1,58 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<Models.Domain.Bautismo>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, ReflectionIt.Mvc.Paging
+@{
+    ViewData["Title"] = "Bautismos";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header" data-background-color="blue">
+                <h4 class="title">Bautismos</h4>
+                <p class="category">Bautizados recientemente</p>
+            </div>
+            <div class="card-content table-responsive">
+                <table class="table">
+                    <thead class="text-info">
+                        <tr>
+                            <th>Bautizado</th>                            
+                            @*<th>Libro</th>
+                            <th>Folio</th>
+                            <th>Partida</th>
+                            <th>Padres del Bautizado</th>*@
+                            <th>Originario de</th>
+                            <th>Realizado por (Sacerdote)</th>                            
+                            <th>Fecha de Nacimiento</th>
+                            <th>Fecha de Bautizo</th>
+                            <th>Constancia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var bautizado in Model)
+                        {
+                            <tr>
+                                <td>@bautizado.NombreBautizado</td>                                
+                                @*<td>@bautizado.Libro</td>
+                                <td>@bautizado.Folio</td>
+                                <td>@bautizado.Partida</td>
+                                <td>@bautizado.PadresBautizado</td>*@
+                                <td>@bautizado.Departamento.NombreDepartamento</td>
+                                <td>@bautizado.Sacerdote.Nombres @bautizado.Sacerdote.Apellidos</td>                                                                
+                                <td>@bautizado.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+                                <td>@bautizado.FechaBautismo.ToString("dd/MM/yyyy")</td>
+                                <td class="text-center"><a href="#"><i class="material-icons">print</i></a></td>
+                            </tr>                        
+                        }                        
+                    </tbody>
+                </table>
+
+                <nav>
+                    @await this.Component.InvokeAsync("Pager", new { pagingList = this.Model })
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

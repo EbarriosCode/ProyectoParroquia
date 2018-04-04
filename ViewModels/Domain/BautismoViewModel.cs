@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using Models.Domain;
 
-namespace Models.Domain
+namespace ViewModels.Domain
 {
-    [Table("Bautismo")]
-    public class Bautismo
+    public class BautismoViewModel
     {
-        [Key]
-        public int BautismoId { get; set; }
+        #region Listas para los combos de la vista Create Bautismo
+        public List<Sacerdote> Sacerdotes { get; set; }
+        public List<Departamento> Departamentos { get; set; }
+        public List<Municipio> Municipios { get; set; }
+        #endregion
 
-        [Required(ErrorMessage ="El campo {0} es requerido")]
-        [StringLength(50,ErrorMessage = "La longitud válida para este campo es de {0} caracteres")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(50, ErrorMessage = "La longitud válida para este campo es de {0} caracteres")]
         public string Libro { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
@@ -26,21 +28,25 @@ namespace Models.Domain
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(100, ErrorMessage = "La longitud válida para este campo es de {0} caracteres")]
-        public string NombreBautizado { get; set; }
+        public string NombresBautizado { get; set; }
+
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100, ErrorMessage = "La longitud válida para este campo es de {0} caracteres")]
+        public string ApellidosBautizado { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(100, ErrorMessage = "La longitud válida para este campo es de {0} caracteres")]
         public string PadresBautizado { get; set; }
-        
+
         //public string RealizadoPor { get; set; }
         [Display(Name = "Realizado Por")]
-        [Required(ErrorMessage ="El campo {0} es requerido")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         public int SacerdoteId { get; set; }
 
         [Display(Name = "Departamento")]
         public int DepartamentoId { get; set; }
 
-        [Display(Name = "Municipio")]          
+        [Display(Name = "Municipio")]
         public int? MunicipioId { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
@@ -66,9 +72,5 @@ namespace Models.Domain
 
         [DataType(DataType.MultilineText)]
         public string Observaciones { get; set; }
-
-        public Sacerdote Sacerdote { get; set; }
-        public Departamento Departamento { get; set; }
-        public Municipio Municipio { get; set; }
     }
 }
