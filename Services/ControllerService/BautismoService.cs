@@ -13,6 +13,7 @@ namespace Services.ControllerService
         bool Create(Bautismo model);
         IEnumerable<Bautismo> GetBautismos();
         IEnumerable<Bautismo> ListaBautismosPaginados();
+        Bautismo FindBautismo(int BautismoId);
     }
 
     public class BautismoService : IBautismoService
@@ -41,7 +42,7 @@ namespace Services.ControllerService
         public IEnumerable<Bautismo> ListaBautismosPaginados()
         {            
             var query = _context.Bautismo.AsNoTracking()
-                                                    .Include(x => x.Sacerdote)
+                                                    .Include(x => x.Sacerdote)                                                    
                                                     .Include(y => y.Departamento);
             Console.WriteLine(query.GetType());            
             return query;
@@ -62,6 +63,24 @@ namespace Services.ControllerService
             }
 
             return listaBautismos;
+        }
+
+        public Bautismo FindBautismo(int BautismoId)
+        {
+            var result = new Bautismo();
+            try
+            {
+                result = _context.Bautismo
+                                          .Include(x => x.Sacerdote)
+                                          .Include(x => x.Sacerdote.PuestoSacerdote)
+                                          .Include(y => y.Departamento)
+                                          .Single(x => x.BautismoId == BautismoId);
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            return result;
         }
     }
 }

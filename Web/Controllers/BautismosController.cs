@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,7 @@ using Models.Domain;
 using ReflectionIT.Mvc.Paging;
 using Services.ControllerService;
 using Services.ResourcesService;
+using ViewModels.Constancias;
 using ViewModels.Domain;
 
 namespace Web.Controllers
@@ -91,5 +93,33 @@ namespace Web.Controllers
             return new JsonResult(listaMunicipios);
         }
 
+        [HttpGet]
+        public IActionResult Constancia(int id)
+        {
+            Bautismo result = null;
+            if (_bautismoService.FindBautismo(id) == null)
+            {
+                return NotFound();
+            }
+
+            result = _bautismoService.FindBautismo(id);
+            BautismoConstanciaViewModel viewModel = new BautismoConstanciaViewModel
+            {
+                Libro = result.Libro,
+                Folio = result.Folio,
+                Partida = result.Partida,
+                NombreBautizado = result.NombreBautizado,
+                PadresBautizado = result.PadresBautizado,
+                RealizadoPorSacerdote = $"{result.Sacerdote.Nombres} {result.Sacerdote.Apellidos}",
+                RealizadoPorPuestoSacerdote = $"{result.Sacerdote.PuestoSacerdote.NombrePuesto}",                
+                FechaNacimiento = result.FechaNacimiento.ToString("dddd dd, MMMM yyyy", CultureInfo.CreateSpecificCulture("es-ES")),
+                FechaBautismo = result.FechaBautismo.ToString("dddd dd, MMMM yyyy", CultureInfo.CreateSpecificCulture("es-ES")),
+                FechaConstancia = DateTime.Now.ToString("dddd dd, MMMM yyyy",CultureInfo.CreateSpecificCulture("es-ES")),
+                PadrinosBautizado = $"{result.Padrino} y {result.Madrina}",
+                Observaciones = result.Observaciones
+            };
+
+            return View(viewModel);
+        }
     }
 }

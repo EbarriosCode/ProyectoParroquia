@@ -1,0 +1,122 @@
+﻿@model ViewModels.Constancias.BautismoConstanciaViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contancia</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        * {
+            padding: 5px;
+        }
+
+        #sanAntonio {
+            width: 180px;
+            height: 180px;
+            float: right;
+        }
+
+        .espacio {
+            margin-bottom: -10px;
+        }
+
+        hr {
+            background-color: #088A08;
+            height: 1px;
+            border: 0;
+            color: #088A08;
+        }
+
+        #parrafo {
+            font-size: 18px;
+            margin-top: 15px;
+            margin-left: 25px;
+            margin-right: 15px;
+        }
+
+        .tabla {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+                <img src="~/images/san-antonio-de-padua.jpg" id="sanAntonio" class="img-responsive">                
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-8">
+                <div class="contenedorTexto">
+                    <h5 class="espacio">Diócesis de Suchitepéquez - Retalhuleu</h5>
+                    <h3 class="espacio">Parroquia San Antonio de Padua</h3>
+                    <h3 class="espacio">Retalhuleu</h3>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <h2 class="text-center">CERTIFICACIÓN PRIVADA DE BAUTISMO</h2>
+                <hr>
+
+                <p id="parrafo">
+                    El infraescrito Párroco certifica tener a la vista el Libro de Bautismo @Model.Libro, folio @Model.Folio en el que aparece inscrito el Bautismo de:
+                </p>
+            </div>
+
+            <div class="col-md-6 col-md-offset-3 text-center tabla">
+                <table class="table table-striped table-responsive">
+                    <tr>
+                        <th class="text-right">Nombre:</th>
+                        <td>@Model.NombreBautizado</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Bautizado(a):</th>
+                        <td>@Model.FechaBautismo</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Quién Nació el día:</th>
+                        <td>@Model.FechaNacimiento</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Hijo de:</th>
+                        <td>@Model.PadresBautizado</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Sus Padrinos fueron:</th>
+                        <td>@Model.PadrinosBautizado</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Observaciones:</th>
+                        <td>@Model.Observaciones</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-md-12">
+                <strong>
+                    <p style="margin-left:25%;">Doy fe.</p>
+                </strong>
+
+                <p class="text-center">@Model.FechaConstancia</p>
+                <br>
+                <p class="text-center espacio">@Model.RealizadoPorSacerdote</p>
+                <p class="text-center espacio">@Model.RealizadoPorPuestoSacerdote</p>
+            </div>
+
+            <div class="col-md-12">
+                <hr>
+                <footer>
+                    <p class="text-center">
+                        Oficina Parroquial Central Retalhuleu, Guatemala C.A. Telefono: 7771-0059 Fax 7771-4583
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
