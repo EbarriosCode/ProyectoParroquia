@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
+using jsreport.AspNetCore;
+using jsreport.Types;
 using Microsoft.AspNetCore.Mvc;
-using Models;
 using Models.Domain;
 using ReflectionIT.Mvc.Paging;
 using Services.ControllerService;
@@ -93,9 +92,10 @@ namespace Web.Controllers
             return new JsonResult(listaMunicipios);
         }
 
-        [HttpGet]
+        
+        [MiddlewareFilter(typeof(JsReportPipeline))]
         public IActionResult Constancia(int id)
-        {
+        {          
             Bautismo result = null;
             if (_bautismoService.FindBautismo(id) == null)
             {
@@ -119,6 +119,8 @@ namespace Web.Controllers
                 Observaciones = result.Observaciones
             };
 
+            // Configuración para convertir html a pdf
+            HttpContext.JsReportFeature().Recipe(Recipe.PhantomPdf);
             return View(viewModel);
         }
     }

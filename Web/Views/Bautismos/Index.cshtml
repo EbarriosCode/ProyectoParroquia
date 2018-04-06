@@ -40,14 +40,15 @@
                         <tr>
                             <td>@bautizado.NombreBautizado</td>
                             @*<td>@bautizado.Libro</td>
-                            <td>@bautizado.Folio</td>
-                            <td>@bautizado.Partida</td>
-                            <td>@bautizado.PadresBautizado</td>*@
+        <td>@bautizado.Folio</td>
+        <td>@bautizado.Partida</td>
+        <td>@bautizado.PadresBautizado</td>*@
                             <td>@bautizado.Departamento.NombreDepartamento</td>
                             <td>@bautizado.Sacerdote.Nombres @bautizado.Sacerdote.Apellidos</td>
                             <td>@bautizado.FechaNacimiento.ToString("dd/MM/yyyy")</td>
                             <td>@bautizado.FechaBautismo.ToString("dd/MM/yyyy")</td>
-                            <td class="text-center"><a href="Bautismos/Constancia/@bautizado.BautismoId"><i class="material-icons">print</i></a></td>
+                            @*<td class="text-center"><a href="Bautismos/Constancia/@bautizado.BautismoId"><i class="material-icons">print</i></a></td>*@
+                            <td class="text-center"><a asp-controller="Bautismos" asp-action="Constancia" asp-route-id="@bautizado.BautismoId"><i class="material-icons">print</i></a></td>
                         </tr>
                 }
                     </tbody>
