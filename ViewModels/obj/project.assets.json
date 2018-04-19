@@ -1655,7 +1655,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "sha512": "kJOj45QL/5F25Wjm4ZgB6rYAfqp5jHMSdO7P/z/e9QVwlD8rw+oj/IRczVErzvT5DOJ2WnPjTxDONcbB0IyNgg==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -3410,8 +3410,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\Ebarrios\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3420,20 +3419,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\documents\\visual studio 2017\\Projects\\SistemaParroquia\\ViewModels\\ViewModels.csproj",
+      "projectUniqueName": "C:\\Users\\Ebarrios\\Documents\\Visual Studio 2017\\Projects\\SistemaParroquia\\ViewModels\\ViewModels.csproj",
       "projectName": "ViewModels",
-      "projectPath": "C:\\Users\\admin\\documents\\visual studio 2017\\Projects\\SistemaParroquia\\ViewModels\\ViewModels.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\documents\\visual studio 2017\\Projects\\SistemaParroquia\\ViewModels\\obj\\",
+      "projectPath": "C:\\Users\\Ebarrios\\Documents\\Visual Studio 2017\\Projects\\SistemaParroquia\\ViewModels\\ViewModels.csproj",
+      "packagesPath": "C:\\Users\\Ebarrios\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ebarrios\\Documents\\Visual Studio 2017\\Projects\\SistemaParroquia\\ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Ebarrios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3445,8 +3442,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\admin\\documents\\visual studio 2017\\Projects\\SistemaParroquia\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\admin\\documents\\visual studio 2017\\Projects\\SistemaParroquia\\Models\\Models.csproj"
+            "C:\\Users\\Ebarrios\\Documents\\Visual Studio 2017\\Projects\\SistemaParroquia\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\Ebarrios\\Documents\\Visual Studio 2017\\Projects\\SistemaParroquia\\Models\\Models.csproj"
             }
           }
         }

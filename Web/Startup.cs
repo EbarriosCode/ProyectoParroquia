@@ -41,6 +41,7 @@ namespace Web
             services.AddAntiforgery(o => o.HeaderName = "HSRF-TOKEN");
             // Obteniendo cadena de conexion y registrando DbContext sql-server
             var sqlConnection = Configuration.GetConnectionString("DefaultConnection");
+            //var sqlConnection = @"Server=db;Database=master;User=sa;Password=netcore123;";
             services.AddDbContext<ParroquiaDbContext>(options => options.UseSqlServer(sqlConnection));
 
             // Inyectando Dependencias de la capa de Servicios

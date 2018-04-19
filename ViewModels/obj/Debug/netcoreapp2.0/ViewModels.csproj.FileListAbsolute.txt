@@ -9,3 +9,14 @@ C:\Users\admin\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels
 C:\Users\admin\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\obj\Debug\netcoreapp2.0\ViewModels.csprojResolveAssemblyReference.cache
 C:\Users\admin\documents\visual studio 2017\Projects\SistemaParroquia\ViewModels\bin\Debug\netcoreapp2.0\Models.dll
 C:\Users\admin\documents\visual studio 2017\Projects\SistemaParroquia\ViewModels\bin\Debug\netcoreapp2.0\Models.pdb
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\bin\Debug\netcoreapp2.0\ViewModels.deps.json
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\bin\Debug\netcoreapp2.0\ViewModels.dll
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\bin\Debug\netcoreapp2.0\ViewModels.pdb
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\bin\Debug\netcoreapp2.0\Models.dll
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\bin\Debug\netcoreapp2.0\Models.pdb
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\obj\Debug\netcoreapp2.0\ViewModels.csprojResolveAssemblyReference.cache
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\obj\Debug\netcoreapp2.0\ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\obj\Debug\netcoreapp2.0\ViewModels.AssemblyInfoInputs.cache
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\obj\Debug\netcoreapp2.0\ViewModels.AssemblyInfo.cs
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\obj\Debug\netcoreapp2.0\ViewModels.dll
+C:\Users\Ebarrios\Documents\Visual Studio 2017\Projects\SistemaParroquia\ViewModels\obj\Debug\netcoreapp2.0\ViewModels.pdb
